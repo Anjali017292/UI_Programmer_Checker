@@ -1,0 +1,145 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cfa0c1;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    margin-bottom: 50px;
+    width: 100%;
+    background-color: rgb(72, 107, 174);
+}
+
+.main {
+    display: flex;
+    gap: 60px;
+}
+
+/* Left Section */
+
+.left {
+    width: 55%;
+}
+
+.input-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 3px solid #263238;
+    background: transparent;
+    font-size: 15px;
+}
+
+button {
+    padding: 12px 20px;
+    border: 3px solid #263238;
+    background: transparent;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #263238;
+    color: white;
+}
+
+.table-result {
+    height: 350px;
+    border: 3px solid #263238;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-result p {
+    font-size: 18px;
+}
+
+/* Right Section */
+
+.right {
+    width: 45%;
+    border-left: 3px solid #263238;
+    padding-left: 20px;
+}
+
+.task {
+    margin-bottom: 30px;
+}
+
+.task p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.result {
+    height: 110px;
+    border: 3px solid #263238;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .right {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .input-box {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+.table-output {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.table-output p {
+    margin: 0;
+    display: block;
+    width: 100%;
+}
