@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UI PROGRAMMER CHECKER</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>UI PROGRAMMER CHECKER</h1>
+
+        <div class="main">
+
+            <!-- Multiplication Table -->
+            <div class="left">
+                <form action="{{ url_for('table') }}" method="POST">
+                    <div class="input-box">
+                        <input type="number" name="number"
+                               placeholder="Enter Any Number" required>
+
+                        <button type="submit">Print Table</button>
+                    </div>
+                </form>
+
+                
+<div class="table-result">
+    
+
+    {% if table %}
+        <div class="table-output">
+            {% for line in table %}
+                <p>{{ line }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="right">
+
+                <!-- Positive, Negative or Zero -->
+                <div class="task">
+                    <p>Write a program to check no is
+                       positive, negative or zero</p>
+
+                    <form action="{{ url_for('check_number') }}" method="POST">
+                        <div class="input-box">
+                            <input type="number" name="number"
+                                   placeholder="Enter Any Number" required>
+
+                            <button type="submit">Check No</button>
+                        </div>
+                    </form>
+
+                    <div class="result">
+                        {% if number_result %}
+                            {{ number_result }}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Prime Number -->
+                <div class="task">
+                    <p>Write a program to check no is
+                       prime or not</p>
+
+                    <form action="{{ url_for('check_prime') }}" method="POST">
+                        <div class="input-box">
+                            <input type="number" name="number"
+                            placeholder="Enter Any Number"
+                            step="1" required>
+
+                            <button type="submit">Check No</button>
+                        </div>
+                    </form>
+
+                    <div class="result">
+                    {% if prime_result %}
+                    {{ prime_result }}
+                    {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
